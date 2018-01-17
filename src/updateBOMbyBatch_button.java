@@ -6,9 +6,12 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class updateBOMbyBatch_button implements ICustomAction{
     @Override
@@ -18,9 +21,28 @@ public class updateBOMbyBatch_button implements ICustomAction{
         try {
             System.out.println("------Start------");
             IChange change = (IChange) obj;
-            ArrayList WhereUsedList = getWhereUsedList(filepath,session);          // build Where Used list
+
+            // build Where Used list
+            ArrayList WhereUsedList = getWhereUsedList(filepath,session);
             System.out.println("Where Used List: "+WhereUsedList);
-            AddToChange(change,WhereUsedList);
+
+            // create mapping
+            HashMap map = getMapping(filepath);
+            System.out.println("Map: "+ map);
+
+            IChange change2 = CreateSubChange(session);
+
+            // parent item add to sub change affected item tab
+            AddToChange(change2,WhereUsedList);
+
+            // add sub change to main change relationship tab
+            ITable reltionship_tb = obj.getTable(ChangeConstants.TABLE_RELATIONSHIPS);
+            reltionship_tb.createRow(change2);
+
+            //改affected item 的redline table
+
+
+
             //Iterator it = WhereUsedList.iterator();
             //while (it.hasNext()){
 
@@ -83,8 +105,33 @@ public class updateBOMbyBatch_button implements ICustomAction{
         return WhereUsed_list;
     }
 
+
     /***********************************************************************
-        * 把 WhereUsed_list 的item 加入表單的Affected item  => 之後要加到次表單內
+        * 建立新舊料號的HashMap
+        * *********************************************************************/
+    private static HashMap getMapping(String path) throws IOException {
+        Map<String,String> map = new HashMap<>();
+
+        FileInputStream inp = new FileInputStream(path);
+        XSSFWorkbook wb = new XSSFWorkbook(inp);                //讀取Excel
+        XSSFSheet sheet = wb.getSheetAt(0);             //讀取wb內的頁面
+        XSSFRow row = sheet.getRow(0);               //讀取頁面0的第一行
+        int rowlength = sheet.getPhysicalNumberOfRows();       // number of row
+        int columnlength = row.getPhysicalNumberOfCells();     // number of column
+
+        for (int i=1;i<rowlength;i++){
+            row = sheet.getRow(i);
+            String oldNumCell = row.getCell(0)+"";
+            String newNumCell = row.getCell(1)+"";
+            map.put(oldNumCell,newNumCell);
+        }
+
+        return (HashMap) map;
+    }
+
+
+    /***********************************************************************
+        * 把 WhereUsed_list 的item 加入表單的Affected item
         * *********************************************************************/
     private static void AddToChange(IChange change, ArrayList WhereUsed_list) throws APIException {
 
@@ -97,10 +144,71 @@ public class updateBOMbyBatch_button implements ICustomAction{
     }
 
 
-
     /***********************************************************************
         * 開立次表單，和其workflow
         * *********************************************************************/
+    private static IChange CreateSubChange(IAgileSession session) throws APIException {
+        IChange change = null;
+
+        //Define a variable for the subclass
+        IAdmin admin = session.getAdminInstance();
+        Integer classSubCO = null;
+        //Get the subclass ID
+        IAgileClass[] classes =  admin.getAgileClasses(IAdmin.CONCRETE);
+        for (int i = 0; i < classes.length; i++) {
+            System.out.println("Class Name: "+classes[i].getName().toString());
+            if (classes[i].getName().equals("SubCO")) {
+                classSubCO = (Integer)classes[i].getId();
+                break;
+            }
+        }
+        //Create a SubCO object
+        if (classSubCO != null) change = (IChange) session.createObject(classSubCO, "R102489");
+
+        IWorkflow[] wfs = change.getWorkflows();            // 得到全部workflow的選項
+
+        IWorkflow workflow = null;
+        for (int i = 0; i < wfs.length; i++) {
+            System.out.println("workflow: "+wfs[i].toString() );
+            if (wfs[i].getName().equals("SubCO"))             // 選要使用的workflow名稱
+                workflow = wfs[i];
+        }
+        change.setWorkflow(workflow);
+        return change;
+    }
+
+
+    /***************************************************************************************
+        * 改Redline BOM table，加入新料號item，將舊料號的欄位填入新料號的欄位，刪除舊料號 item  => 之後要改成客戶的欄位
+        * *************************************************************************************/
+    private static void updateRedlineBOM(IChange change, IAgileSession session) throws APIException {
+
+        ITable Affected_tb =  change.getTable(ChangeConstants.TABLE_AFFECTEDITEMS);
+        Iterator it = Affected_tb.iterator();
+        if (it.hasNext()){
+            IRow row = (IRow) it.next();
+            System.out.println("affected item: "+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_ITEM_NUMBER).toString());
+            String AffectedItemNum = row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_ITEM_NUMBER).toString();
+            IItem AffectedItem =(IItem) session.getObject(IItem.OBJECT_TYPE,AffectedItemNum);
+            IItem item = (IItem) session.getObject(IItem.OBJECT_TYPE,"P00009");
+            AffectedItem.setRevision(change.getName());
+            ITable RedlineBOM_tb = AffectedItem.getTable(ItemConstants.TABLE_REDLINEBOM);
+            // get old row
+            Iterator it2 = RedlineBOM_tb.iterator();
+            IRow row2=null;
+            if(it2.hasNext()) row2 = (IRow) it2.next();
+            // add new row, set value
+            IRow RedlineRow = RedlineBOM_tb.createRow(item);
+            RedlineRow.setValue(12508,row2.getValue(12508));
+            RedlineRow.setValue(12509,row2.getValue(12509));
+            // remove old row
+            RedlineBOM_tb.removeRow(row2);
+
+        }
+    }
+
+
+
 
 
 }
