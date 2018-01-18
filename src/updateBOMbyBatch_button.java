@@ -8,10 +8,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class updateBOMbyBatch_button implements ICustomAction{
     @Override
@@ -40,7 +38,7 @@ public class updateBOMbyBatch_button implements ICustomAction{
             reltionship_tb.createRow(change2);
 
             //改affected item 的redline table
-
+            updateRedlineBOM(change2,session,map);
 
 
             //Iterator it = WhereUsedList.iterator();
@@ -156,20 +154,20 @@ public class updateBOMbyBatch_button implements ICustomAction{
         //Get the subclass ID
         IAgileClass[] classes =  admin.getAgileClasses(IAdmin.CONCRETE);
         for (int i = 0; i < classes.length; i++) {
-            System.out.println("Class Name: "+classes[i].getName().toString());
+            // System.out.println("Class Name: "+classes[i].getName().toString());
             if (classes[i].getName().equals("SubCO")) {
                 classSubCO = (Integer)classes[i].getId();
                 break;
             }
         }
         //Create a SubCO object
-        if (classSubCO != null) change = (IChange) session.createObject(classSubCO, "R102489");
+        if (classSubCO != null) change = (IChange) session.createObject(classSubCO, "R102506");
 
         IWorkflow[] wfs = change.getWorkflows();            // 得到全部workflow的選項
 
         IWorkflow workflow = null;
         for (int i = 0; i < wfs.length; i++) {
-            System.out.println("workflow: "+wfs[i].toString() );
+            // System.out.println("workflow: "+wfs[i].toString() );
             if (wfs[i].getName().equals("SubCO"))             // 選要使用的workflow名稱
                 workflow = wfs[i];
         }
@@ -181,34 +179,50 @@ public class updateBOMbyBatch_button implements ICustomAction{
     /***************************************************************************************
         * 改Redline BOM table，加入新料號item，將舊料號的欄位填入新料號的欄位，刪除舊料號 item  => 之後要改成客戶的欄位
         * *************************************************************************************/
-    private static void updateRedlineBOM(IChange change, IAgileSession session) throws APIException {
+    private static void updateRedlineBOM(IChange change, IAgileSession session, HashMap map) throws APIException {
 
+        // get affected table
         ITable Affected_tb =  change.getTable(ChangeConstants.TABLE_AFFECTEDITEMS);
         Iterator it = Affected_tb.iterator();
-        if (it.hasNext()){
+        while (it.hasNext()){
+            // get affected item
             IRow row = (IRow) it.next();
             System.out.println("affected item: "+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_ITEM_NUMBER).toString());
             String AffectedItemNum = row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_ITEM_NUMBER).toString();
             IItem AffectedItem =(IItem) session.getObject(IItem.OBJECT_TYPE,AffectedItemNum);
-            IItem item = (IItem) session.getObject(IItem.OBJECT_TYPE,"P00009");
+            // get redline BOM
             AffectedItem.setRevision(change.getName());
             ITable RedlineBOM_tb = AffectedItem.getTable(ItemConstants.TABLE_REDLINEBOM);
-            // get old row
             Iterator it2 = RedlineBOM_tb.iterator();
-            IRow row2=null;
-            if(it2.hasNext()) row2 = (IRow) it2.next();
-            // add new row, set value
-            IRow RedlineRow = RedlineBOM_tb.createRow(item);
-            RedlineRow.setValue(12508,row2.getValue(12508));
-            RedlineRow.setValue(12509,row2.getValue(12509));
+            // temp list -> because ConcurrentModificationException
+            ArrayList temp_list = new ArrayList<>();
+            while(it2.hasNext()) {
+                IRow row2 = (IRow) it2.next();
+                temp_list.add(row2);
+            }
+            // System.out.println(temp_list);
+            Iterator it3 = temp_list.iterator();
+            while (it3.hasNext()){
+                IRow row3 = (IRow) it3.next();
+                System.out.println(row3.getValues());
+                // get new item
+                String oldNum =row3.getValue(1011).toString();
+                IItem newitem = (IItem) session.getObject(IItem.OBJECT_TYPE,map.get(oldNum));
+                // add new row, set value
+                IRow RedlineRow = RedlineBOM_tb.createRow(newitem);
+                RedlineRow.setValue(12508,row3.getValue(12508));
+                RedlineRow.setValue(12509,row3.getValue(12509));
+            }
             // remove old row
-            RedlineBOM_tb.removeRow(row2);
-
+            RedlineBOM_tb.removeAll(temp_list);
+            }
         }
+
+
     }
 
 
 
 
 
-}
+
