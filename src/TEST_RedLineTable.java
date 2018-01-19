@@ -10,6 +10,7 @@ public class TEST_RedLineTable implements ICustomAction{
 
         IChange change = (IChange) obj;
         try {
+
             ITable Affected_tb =  change.getTable(ChangeConstants.TABLE_AFFECTEDITEMS);
             Iterator it = Affected_tb.iterator();
             if (it.hasNext()){
@@ -30,8 +31,21 @@ public class TEST_RedLineTable implements ICustomAction{
                 RedlineRow.setValue(12509,row2.getValue(12509));
                 // remove old row
                 RedlineBOM_tb.removeRow(row2);
-
             }
+            /*
+            ITable pending_tb = obj.getTable(ItemConstants.TABLE_PENDINGCHANGES);
+            Iterator it = pending_tb.iterator();
+            String status = "";
+            String changeName = "";
+            if (it.hasNext())
+            {
+                IRow row = (IRow) it.next();
+                status = row.getValue(ItemConstants.ATT_PENDING_CHANGES_STATUS).toString();
+                changeName = row.getValue(ItemConstants.ATT_PENDING_CHANGES_NUMBER).toString();
+                System.out.println("status: "+status);
+                System.out.println("change number: "+ changeName);
+            }
+*/
 
         } catch (APIException e) {
             e.printStackTrace();

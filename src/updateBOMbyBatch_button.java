@@ -1,6 +1,7 @@
 import com.agile.api.*;
 import com.agile.px.ActionResult;
 import com.agile.px.ICustomAction;
+import com.anselm.plm.utilobj.Ini;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -12,10 +13,19 @@ import java.lang.reflect.Array;
 import java.util.*;
 
 public class updateBOMbyBatch_button implements ICustomAction{
+
+
     @Override
     public ActionResult doAction(IAgileSession session, INode Node, IDataObject obj) {
 
-        String filepath = "C:\\ExcelFile\\OldAndNew.xlsx";
+        Ini ini = new Ini("D:\\Agile\\Agile936\\config.ini");
+        int NumOfexcelrow = Integer.valueOf(ini.getValue("parameter","NumOfexcelrow")) ;
+        int NumOfBatch = Integer.valueOf(ini.getValue("parameter","NumOfBatch"));
+        String localpath = ini.getValue("path","localpath");
+        String fileName = ini.getValue("Name","fileName");
+
+        String filepath = localpath+"\\"+fileName ;
+        int batchSize = NumOfBatch;
         try {
             System.out.println("------Start------");
             IChange change = (IChange) obj;
@@ -28,24 +38,29 @@ public class updateBOMbyBatch_button implements ICustomAction{
             HashMap map = getMapping(filepath);
             System.out.println("Map: "+ map);
 
-            IChange change2 = CreateSubChange(session);
-
-            // parent item add to sub change affected item tab
-            AddToChange(change2,WhereUsedList);
-
-            // add sub change to main change relationship tab
-            ITable reltionship_tb = obj.getTable(ChangeConstants.TABLE_RELATIONSHIPS);
-            reltionship_tb.createRow(change2);
-
-            //改affected item 的redline table
-            updateRedlineBOM(change2,session,map);
+            System.out.println("WhereUsedList length: "+ WhereUsedList.size());
+            int WhereUsedListlength = WhereUsedList.size();
+            int NumOfsubChange = (WhereUsedListlength/batchSize) +1;
+            System.out.println("NumOfsubChange: "+NumOfsubChange);
+            int j =0;
 
 
-            //Iterator it = WhereUsedList.iterator();
-            //while (it.hasNext()){
+            for(int i=0;i<NumOfsubChange;i++){
 
-            //}
+                // create sub change
+                IChange change2 = CreateSubChange(session);
 
+                // parent item add to sub change affected item tab
+                AddToChange(change2,WhereUsedList,j,batchSize);
+                j=j+batchSize;
+
+                //改affected item 的redline table
+                updateRedlineBOM(change2,session,map);
+
+                // add sub change to main change relationship tab
+                ITable reltionship_tb = obj.getTable(ChangeConstants.TABLE_RELATIONSHIPS);
+                reltionship_tb.createRow(change2);
+            }
 
             System.out.println("--------End--------");
         } catch (IOException e) {
@@ -97,7 +112,10 @@ public class updateBOMbyBatch_button implements ICustomAction{
                 IRow row =(IRow) it2.next();
                 IItem oldparentitem = (IItem)row.getReferent();
                 System.out.println("Parent item number:"+oldparentitem.getName());
-                if(!WhereUsed_list.contains(oldparentitem)) WhereUsed_list.add(oldparentitem);
+                System.out.println("Lifecycle phase: "+oldparentitem.getValue(ItemConstants.ATT_TITLE_BLOCK_LIFECYCLE_PHASE).toString());
+                String phase = oldparentitem.getValue(ItemConstants.ATT_TITLE_BLOCK_LIFECYCLE_PHASE).toString();
+                //System.out.println(phase.equals("EOL") || phase.equals("Pre EOL"));
+                if(!WhereUsed_list.contains(oldparentitem)  &&  !(phase.equals("EOL") || phase.equals("Pre EOL"))  ) WhereUsed_list.add(oldparentitem);
             }
         }
         return WhereUsed_list;
@@ -131,14 +149,22 @@ public class updateBOMbyBatch_button implements ICustomAction{
     /***********************************************************************
         * 把 WhereUsed_list 的item 加入表單的Affected item
         * *********************************************************************/
-    private static void AddToChange(IChange change, ArrayList WhereUsed_list) throws APIException {
+    private static void AddToChange(IChange change, ArrayList WhereUsed_list,int num,int bsize) throws APIException {
 
         ITable affecteditem_tb = change.getTable(ChangeConstants.TABLE_AFFECTEDITEMS);
-        Iterator it = WhereUsed_list.iterator();
-        while(it.hasNext()) {
-            IItem item = (IItem)it.next();
+        System.out.println("1");
+        for(int i=0;i<bsize;i++){
+            IItem item = (IItem) WhereUsed_list.get(num);
             IRow affectedrow = affecteditem_tb.createRow(item);
+            num=num+1;
+            if(num == WhereUsed_list.size()) break;
         }
+
+        //Iterator it = WhereUsed_list.iterator();
+        //while(it.hasNext()) {
+        //    IItem item = (IItem)it.next();
+        //    IRow affectedrow = affecteditem_tb.createRow(item);
+        //}
     }
 
 
@@ -150,18 +176,23 @@ public class updateBOMbyBatch_button implements ICustomAction{
 
         //Define a variable for the subclass
         IAdmin admin = session.getAdminInstance();
-        Integer classSubCO = null;
+        IAgileClass classSubCO = null;
+        String atoNextNumber="";
         //Get the subclass ID
         IAgileClass[] classes =  admin.getAgileClasses(IAdmin.CONCRETE);
         for (int i = 0; i < classes.length; i++) {
             // System.out.println("Class Name: "+classes[i].getName().toString());
             if (classes[i].getName().equals("SubCO")) {
-                classSubCO = (Integer)classes[i].getId();
+                IAutoNumber an = classes[i].getAutoNumberSources()[0];
+                atoNextNumber = an.getNextNumber();
+                classSubCO = classes[i];
                 break;
             }
         }
         //Create a SubCO object
-        if (classSubCO != null) change = (IChange) session.createObject(classSubCO, "R102506");
+        System.out.println("subNUM:"+atoNextNumber);
+
+        if (classSubCO != null) change = (IChange) session.createObject(classSubCO, atoNextNumber);
 
         IWorkflow[] wfs = change.getWorkflows();            // 得到全部workflow的選項
 
@@ -172,6 +203,8 @@ public class updateBOMbyBatch_button implements ICustomAction{
                 workflow = wfs[i];
         }
         change.setWorkflow(workflow);
+
+
         return change;
     }
 
@@ -188,6 +221,10 @@ public class updateBOMbyBatch_button implements ICustomAction{
             // get affected item
             IRow row = (IRow) it.next();
             System.out.println("affected item: "+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_ITEM_NUMBER).toString());
+            System.out.println("Old REV: "+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_OLD_REV).toString());
+            String NewRev = getNewRev(row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_OLD_REV).toString());
+            row.setValue(ChangeConstants.ATT_AFFECTED_ITEMS_NEW_REV,NewRev);
+            System.out.println("New REV: "+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_NEW_REV).toString());
             String AffectedItemNum = row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_ITEM_NUMBER).toString();
             IItem AffectedItem =(IItem) session.getObject(IItem.OBJECT_TYPE,AffectedItemNum);
             // get redline BOM
@@ -198,15 +235,18 @@ public class updateBOMbyBatch_button implements ICustomAction{
             ArrayList temp_list = new ArrayList<>();
             while(it2.hasNext()) {
                 IRow row2 = (IRow) it2.next();
+                String oldNum =row2.getValue(1011).toString();
+                if(map.get(oldNum)==null) continue;
                 temp_list.add(row2);
             }
             // System.out.println(temp_list);
             Iterator it3 = temp_list.iterator();
             while (it3.hasNext()){
                 IRow row3 = (IRow) it3.next();
-                System.out.println(row3.getValues());
+                //System.out.println(row3.getValues());
                 // get new item
                 String oldNum =row3.getValue(1011).toString();
+                if(map.get(oldNum)==null) continue;
                 IItem newitem = (IItem) session.getObject(IItem.OBJECT_TYPE,map.get(oldNum));
                 // add new row, set value
                 IRow RedlineRow = RedlineBOM_tb.createRow(newitem);
@@ -217,7 +257,24 @@ public class updateBOMbyBatch_button implements ICustomAction{
             RedlineBOM_tb.removeAll(temp_list);
             }
         }
+    private static String getNewRev(String oldRev){
 
+        String NewRev = "";
+        String a = oldRev.substring(0,1);
+        int b = Integer.parseInt(oldRev.substring(1,2));
+        String c = oldRev.substring(2,3);
+        int d = Integer.parseInt(oldRev.substring(3,4));
+
+        if (d==9){
+            b=b+1;
+            d=0;
+        }else {
+            d=d+1;
+        }
+
+        NewRev = a+b+c+d;
+        return NewRev;
+    }
 
     }
 

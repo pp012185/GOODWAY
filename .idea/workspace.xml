@@ -7,9 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6d9a597-7596-4301-92eb-2d5612a5b8a2" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/UpdateBOM_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/UpdateBOM_jar.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/UpdateBOM.iml" afterPath="$PROJECT_DIR$/UpdateBOM.iml" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/UpdateBOM_jar/UpdateBOM.jar" afterPath="$PROJECT_DIR$/out/artifacts/UpdateBOM_jar/UpdateBOM.jar" />
+      <change beforePath="$PROJECT_DIR$/out/production/UpdateBOM/TEST.class" afterPath="$PROJECT_DIR$/out/production/UpdateBOM/TEST.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/UpdateBOM/TEST_RedLineTable.class" afterPath="$PROJECT_DIR$/out/production/UpdateBOM/TEST_RedLineTable.class" />
       <change beforePath="$PROJECT_DIR$/out/production/UpdateBOM/updateBOMbyBatch_button.class" afterPath="$PROJECT_DIR$/out/production/UpdateBOM/updateBOMbyBatch_button.class" />
+      <change beforePath="$PROJECT_DIR$/src/TEST.java" afterPath="$PROJECT_DIR$/src/TEST.java" />
+      <change beforePath="$PROJECT_DIR$/src/TEST_RedLineTable.java" afterPath="$PROJECT_DIR$/src/TEST_RedLineTable.java" />
       <change beforePath="$PROJECT_DIR$/src/updateBOMbyBatch_button.java" afterPath="$PROJECT_DIR$/src/updateBOMbyBatch_button.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,8 +31,8 @@
       <file leaf-file-name="checkExcelFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/checkExcelFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="56" column="83" lean-forward="false" selection-start-line="56" selection-start-column="74" selection-end-line="56" selection-end-column="83" />
+            <state relative-caret-position="4">
+              <caret line="95" column="49" lean-forward="false" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,9 +43,11 @@
       <file leaf-file-name="updateBOMbyBatch.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/updateBOMbyBatch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-19">
-              <caret line="6" column="47" lean-forward="false" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
-              <folding />
+            <state relative-caret-position="336">
+              <caret line="19" column="58" lean-forward="false" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,14 +55,17 @@
       <file leaf-file-name="updateBOMbyBatch_button.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/updateBOMbyBatch_button.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="211" column="67" lean-forward="false" selection-start-line="211" selection-start-column="67" selection-end-line="211" selection-end-column="67" />
+            <state relative-caret-position="640">
+              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
                 <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
                 <element signature="method#getMapping#0;class#updateBOMbyBatch_button#0" expanded="false" />
                 <element signature="method#AddToChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
+                <element signature="method#CreateSubChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
+                <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch_button#0" expanded="false" />
+                <element signature="method#getNewRev#0;class#updateBOMbyBatch_button#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -63,8 +74,8 @@
       <file leaf-file-name="TEST_RedLineTable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TEST_RedLineTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="749">
-              <caret line="39" column="38" lean-forward="false" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="38" />
+            <state relative-caret-position="264">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,11 +86,11 @@
       <file leaf-file-name="TEST.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TEST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="389">
+              <caret line="38" column="50" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#188#196#0" expanded="true" />
+                <element signature="method#getNewRev#0;class#TEST#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -88,9 +99,11 @@
       <file leaf-file-name="MainAlter_1.java" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Desktop/東碩/UMEC_BOM/src/MainAlter/MainAlter_1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="173" column="22" lean-forward="false" selection-start-line="173" selection-start-column="22" selection-end-line="173" selection-end-column="22" />
+            <state relative-caret-position="327">
+              <caret line="46" column="31" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="46" selection-end-column="31" />
               <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#main#0;class#MainAlter_1#0" expanded="false" />
                 <element signature="method#CreateECO#0;class#MainAlter_1#0" expanded="false" />
                 <element signature="method#addAffectedItem#0;class#MainAlter_1#0" expanded="false" />
                 <element signature="method#DealWithData#0;class#MainAlter_1#0" expanded="false" />
@@ -104,6 +117,153 @@
                 <element signature="method#getDateTime#0;class#MainAlter_1#0" expanded="false" />
                 <element signature="method#addMessage#0;class#MainAlter_1#0" expanded="false" />
                 <element signature="class#ErrorMessage#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ini.class" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.634/Ini.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-436">
+              <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="17" />
+              <folding>
+                <marker date="1508692788000" expanded="true" signature="0:104" ph="/.../" />
+                <marker date="1508692788000" expanded="true" signature="146:348" ph="..." />
+                <marker date="1508692788000" expanded="true" signature="589:600" ph=" { " />
+                <marker date="1508692788000" expanded="true" signature="635:641" ph=" }" />
+                <marker date="1508692788000" expanded="true" signature="673:684" ph=" { " />
+                <marker date="1508692788000" expanded="true" signature="703:709" ph=" }" />
+                <marker date="1508692788000" expanded="true" signature="749:951" ph="{...}" />
+                <marker date="1508692788000" expanded="true" signature="989:2787" ph="{...}" />
+                <marker date="1508692788000" expanded="true" signature="2823:3246" ph="{...}" />
+                <marker date="1508692788000" expanded="true" signature="3310:3389" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogIt.class" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.860/LogIt.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+              <folding>
+                <marker date="1508692788000" expanded="true" signature="0:104" ph="/.../" />
+                <marker date="1508692788000" expanded="true" signature="146:645" ph="..." />
+                <marker date="1508692788000" expanded="true" signature="1608:1615" ph="{}" />
+                <marker date="1508692788000" expanded="false" signature="1647:1658" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="1685:1691" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="1740:1751" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="1784:1790" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="1863:1874" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="1917:1923" ph=" }" />
+                <marker date="1508692788000" expanded="true" signature="2001:2187" ph="{...}" />
+                <marker date="1508692788000" expanded="false" signature="2217:2228" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="2246:2252" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="2285:2296" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="2317:2323" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="2361:2372" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="2392:2398" ph=" }" />
+                <marker date="1508692788000" expanded="true" signature="2424:2547" ph="{...}" />
+                <marker date="1508692788000" expanded="false" signature="2587:2598" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="2617:2623" ph=" }" />
+                <marker date="1508692788000" expanded="true" signature="2671:2841" ph="{...}" />
+                <marker date="1508692788000" expanded="true" signature="2922:3118" ph="{...}" />
+                <marker date="1508692788000" expanded="true" signature="3239:3562" ph="{...}" />
+                <marker date="1508692788000" expanded="true" signature="3687:4085" ph="{...}" />
+                <marker date="1508692788000" expanded="false" signature="4115:4126" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="4160:4166" ph=" }" />
+                <marker date="1508692788000" expanded="true" signature="4231:4279" ph="{...}" />
+                <marker date="1508692788000" expanded="false" signature="4311:4322" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="4350:4356" ph=" }" />
+                <marker date="1508692788000" expanded="true" signature="4389:4467" ph="{...}" />
+                <marker date="1508692788000" expanded="true" signature="4499:4575" ph="{...}" />
+                <marker date="1508692788000" expanded="false" signature="4600:4611" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="4629:4635" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="4668:4679" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="4705:4711" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="4745:4756" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="4783:4789" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="4827:4838" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="4857:4863" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="4897:4908" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="4926:4932" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="4955:4966" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="4987:4993" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="5026:5037" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="5070:5076" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="5117:5128" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="5150:5156" ph=" }" />
+                <marker date="1508692788000" expanded="true" signature="5213:6364" ph="{...}" />
+                <marker date="1508692788000" expanded="false" signature="6412:6423" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="6481:6487" ph=" }" />
+                <marker date="1508692788000" expanded="true" signature="6555:6706" ph="{...}" />
+                <marker date="1508692788000" expanded="false" signature="6746:6757" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="6781:6787" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="6836:7463" ph="{...}" />
+                <marker date="1508692788000" expanded="false" signature="7499:7510" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="7544:7550" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="7594:7605" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="7627:7633" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="7682:7693" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="7725:7731" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="7788:7799" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="7827:7833" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="7906:8687" ph="{...}" />
+                <marker date="1508692788000" expanded="false" signature="8722:8733" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="8769:8775" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="8818:8829" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="8852:8858" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="8906:8917" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="8951:8957" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="9013:9024" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="9053:9059" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="9130:9141" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="9184:9190" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="9227:9238" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="9279:9285" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="9330:9341" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="9365:9371" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="9421:9432" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="9471:9477" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="9535:9546" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="9596:9602" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="9676:10322" ph="{...}" />
+                <marker date="1508692788000" expanded="false" signature="10365:10376" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="10404:10410" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="10468:10479" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="10511:10517" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="10568:10579" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="10608:10614" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="10681:11262" ph="{...}" />
+                <marker date="1508692788000" expanded="false" signature="11293:11304" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="11337:11343" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="11375:11386" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="11417:11423" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="11455:11466" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="11497:11503" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="11553:11564" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="11598:11604" ph=" }" />
+                <marker date="1508692788000" expanded="false" signature="11665:12126" ph="{...}" />
+                <marker date="1508692788000" expanded="false" signature="12221:12309" ph="{...}" />
+                <marker date="1508692788000" expanded="true" signature="12396:12483" ph="{...}" />
+                <marker date="1508692788000" expanded="true" signature="12556:12623" ph="{...}" />
+                <marker date="1508692788000" expanded="true" signature="12704:12903" ph="{...}" />
+                <marker date="1508692788000" expanded="true" signature="12938:13620" ph="{...}" />
+                <marker date="1508692788000" expanded="false" signature="13662:13673" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="13726:13732" ph=" }" />
+                <marker date="1508692788000" expanded="true" signature="13785:14112" ph="{...}" />
+                <marker date="1508692788000" expanded="true" signature="14143:14373" ph="{...}" />
+                <marker date="1508692788000" expanded="true" signature="14440:14589" ph="{...}" />
+                <marker date="1508692788000" expanded="false" signature="14624:14635" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="14659:14665" ph=" }" />
+                <marker date="1508692788000" expanded="true" signature="14706:14956" ph="{...}" />
+                <marker date="1508692788000" expanded="true" signature="15012:15415" ph="{...}" />
+                <marker date="1508692788000" expanded="false" signature="15451:15462" ph=" { " />
+                <marker date="1508692788000" expanded="false" signature="15486:15492" ph=" }" />
+                <marker date="1508692788000" expanded="true" signature="15526:15777" ph="{...}" />
+                <marker date="1508692788000" expanded="true" signature="15839:16524" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -124,10 +284,12 @@
       <find>FileOutputStream</find>
       <find>getReferent</find>
       <find>UMECDB</find>
-      <find>session</find>
       <find>CreateECO</find>
       <find>change</find>
       <find>admin</find>
+      <find>log</find>
+      <find>ini</find>
+      <find>session</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -172,6 +334,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -194,17 +360,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/pp/anselm/9.3.6_SDK_Samples/extensions/AnselmToolKit.jar!/" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
@@ -346,7 +508,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -357,7 +519,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14216739" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14377682" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -377,11 +539,93 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/checkExcelFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1152">
+          <caret line="56" column="83" lean-forward="false" selection-start-line="56" selection-start-column="74" selection-end-line="56" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/updateBOMbyBatch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="47" lean-forward="false" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TEST_RedLineTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1032">
+          <caret line="47" column="1" lean-forward="false" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TEST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getNewRev#0;class#TEST#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/東碩/UMEC_BOM/src/MainAlter/MainAlter_1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1920">
+          <caret line="173" column="22" lean-forward="false" selection-start-line="173" selection-start-column="22" selection-end-line="173" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#CreateECO#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#addAffectedItem#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithData#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithCommonBOM#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithSiteBOM#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#ChangeParts#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithUnpassedAftitem#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithErrorLinkedList#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#updateSucessComponent#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#ReleaseChange#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#getDateTime#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#addMessage#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="class#ErrorMessage#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/updateBOMbyBatch_button.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3024">
+          <caret line="227" column="0" lean-forward="true" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#getMapping#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#AddToChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#getNewRev#0;class#updateBOMbyBatch_button#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/checkExcelFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -396,7 +640,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -415,6 +661,8 @@
         <state relative-caret-position="1920">
           <caret line="173" column="22" lean-forward="false" selection-start-line="173" selection-start-column="22" selection-end-line="173" selection-end-column="22" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#CreateECO#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#addAffectedItem#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithData#0;class#MainAlter_1#0" expanded="false" />
@@ -442,6 +690,9 @@
             <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#AddToChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#getNewRev#0;class#updateBOMbyBatch_button#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -460,7 +711,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -469,6 +722,8 @@
         <state relative-caret-position="864">
           <caret line="125" column="41" lean-forward="false" selection-start-line="112" selection-start-column="12" selection-end-line="125" selection-end-column="41" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#CreateECO#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#addAffectedItem#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithData#0;class#MainAlter_1#0" expanded="false" />
@@ -496,6 +751,9 @@
             <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#AddToChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#getNewRev#0;class#updateBOMbyBatch_button#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -514,7 +772,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -523,6 +783,8 @@
         <state relative-caret-position="864">
           <caret line="125" column="41" lean-forward="false" selection-start-line="112" selection-start-column="12" selection-end-line="125" selection-end-column="41" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#CreateECO#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#addAffectedItem#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithData#0;class#MainAlter_1#0" expanded="false" />
@@ -550,6 +812,9 @@
             <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#AddToChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#getNewRev#0;class#updateBOMbyBatch_button#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -568,7 +833,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -577,6 +844,8 @@
         <state relative-caret-position="864">
           <caret line="125" column="41" lean-forward="true" selection-start-line="112" selection-start-column="12" selection-end-line="125" selection-end-column="41" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#CreateECO#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#addAffectedItem#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithData#0;class#MainAlter_1#0" expanded="false" />
@@ -604,6 +873,9 @@
             <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#AddToChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#getNewRev#0;class#updateBOMbyBatch_button#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -632,29 +904,224 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/checkExcelFile.java">
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_80/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="56" column="83" lean-forward="false" selection-start-line="56" selection-start-column="74" selection-end-line="56" selection-end-column="83" />
+        <state relative-caret-position="177">
+          <caret line="858" column="0" lean-forward="false" selection-start-line="858" selection-start-column="0" selection-end-line="858" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.408/ExportBOMToExcel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="49" lean-forward="false" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.812/ExportBOMTable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="210" column="0" lean-forward="false" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.807/AttributeConfig.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-100">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.770/importAttrs.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.119/AUtil.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1680">
+          <caret line="41" column="34" lean-forward="true" selection-start-line="41" selection-start-column="34" selection-end-line="56" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.860/LogIt.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1508692788000" expanded="true" signature="0:104" ph="/.../" />
+            <marker date="1508692788000" expanded="true" signature="146:645" ph="..." />
+            <marker date="1508692788000" expanded="true" signature="1608:1615" ph="{}" />
+            <marker date="1508692788000" expanded="false" signature="1647:1658" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="1685:1691" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="1740:1751" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="1784:1790" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="1863:1874" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="1917:1923" ph=" }" />
+            <marker date="1508692788000" expanded="true" signature="2001:2187" ph="{...}" />
+            <marker date="1508692788000" expanded="false" signature="2217:2228" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="2246:2252" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="2285:2296" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="2317:2323" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="2361:2372" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="2392:2398" ph=" }" />
+            <marker date="1508692788000" expanded="true" signature="2424:2547" ph="{...}" />
+            <marker date="1508692788000" expanded="false" signature="2587:2598" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="2617:2623" ph=" }" />
+            <marker date="1508692788000" expanded="true" signature="2671:2841" ph="{...}" />
+            <marker date="1508692788000" expanded="true" signature="2922:3118" ph="{...}" />
+            <marker date="1508692788000" expanded="true" signature="3239:3562" ph="{...}" />
+            <marker date="1508692788000" expanded="true" signature="3687:4085" ph="{...}" />
+            <marker date="1508692788000" expanded="false" signature="4115:4126" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="4160:4166" ph=" }" />
+            <marker date="1508692788000" expanded="true" signature="4231:4279" ph="{...}" />
+            <marker date="1508692788000" expanded="false" signature="4311:4322" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="4350:4356" ph=" }" />
+            <marker date="1508692788000" expanded="true" signature="4389:4467" ph="{...}" />
+            <marker date="1508692788000" expanded="true" signature="4499:4575" ph="{...}" />
+            <marker date="1508692788000" expanded="false" signature="4600:4611" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="4629:4635" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="4668:4679" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="4705:4711" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="4745:4756" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="4783:4789" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="4827:4838" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="4857:4863" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="4897:4908" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="4926:4932" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="4955:4966" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="4987:4993" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="5026:5037" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="5070:5076" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="5117:5128" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="5150:5156" ph=" }" />
+            <marker date="1508692788000" expanded="true" signature="5213:6364" ph="{...}" />
+            <marker date="1508692788000" expanded="false" signature="6412:6423" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="6481:6487" ph=" }" />
+            <marker date="1508692788000" expanded="true" signature="6555:6706" ph="{...}" />
+            <marker date="1508692788000" expanded="false" signature="6746:6757" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="6781:6787" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="6836:7463" ph="{...}" />
+            <marker date="1508692788000" expanded="false" signature="7499:7510" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="7544:7550" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="7594:7605" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="7627:7633" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="7682:7693" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="7725:7731" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="7788:7799" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="7827:7833" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="7906:8687" ph="{...}" />
+            <marker date="1508692788000" expanded="false" signature="8722:8733" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="8769:8775" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="8818:8829" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="8852:8858" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="8906:8917" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="8951:8957" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="9013:9024" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="9053:9059" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="9130:9141" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="9184:9190" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="9227:9238" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="9279:9285" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="9330:9341" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="9365:9371" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="9421:9432" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="9471:9477" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="9535:9546" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="9596:9602" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="9676:10322" ph="{...}" />
+            <marker date="1508692788000" expanded="false" signature="10365:10376" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="10404:10410" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="10468:10479" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="10511:10517" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="10568:10579" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="10608:10614" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="10681:11262" ph="{...}" />
+            <marker date="1508692788000" expanded="false" signature="11293:11304" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="11337:11343" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="11375:11386" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="11417:11423" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="11455:11466" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="11497:11503" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="11553:11564" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="11598:11604" ph=" }" />
+            <marker date="1508692788000" expanded="false" signature="11665:12126" ph="{...}" />
+            <marker date="1508692788000" expanded="false" signature="12221:12309" ph="{...}" />
+            <marker date="1508692788000" expanded="true" signature="12396:12483" ph="{...}" />
+            <marker date="1508692788000" expanded="true" signature="12556:12623" ph="{...}" />
+            <marker date="1508692788000" expanded="true" signature="12704:12903" ph="{...}" />
+            <marker date="1508692788000" expanded="true" signature="12938:13620" ph="{...}" />
+            <marker date="1508692788000" expanded="false" signature="13662:13673" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="13726:13732" ph=" }" />
+            <marker date="1508692788000" expanded="true" signature="13785:14112" ph="{...}" />
+            <marker date="1508692788000" expanded="true" signature="14143:14373" ph="{...}" />
+            <marker date="1508692788000" expanded="true" signature="14440:14589" ph="{...}" />
+            <marker date="1508692788000" expanded="false" signature="14624:14635" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="14659:14665" ph=" }" />
+            <marker date="1508692788000" expanded="true" signature="14706:14956" ph="{...}" />
+            <marker date="1508692788000" expanded="true" signature="15012:15415" ph="{...}" />
+            <marker date="1508692788000" expanded="false" signature="15451:15462" ph=" { " />
+            <marker date="1508692788000" expanded="false" signature="15486:15492" ph=" }" />
+            <marker date="1508692788000" expanded="true" signature="15526:15777" ph="{...}" />
+            <marker date="1508692788000" expanded="true" signature="15839:16524" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.634/Ini.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-436">
+          <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="17" />
+          <folding>
+            <marker date="1508692788000" expanded="true" signature="0:104" ph="/.../" />
+            <marker date="1508692788000" expanded="true" signature="146:348" ph="..." />
+            <marker date="1508692788000" expanded="true" signature="589:600" ph=" { " />
+            <marker date="1508692788000" expanded="true" signature="635:641" ph=" }" />
+            <marker date="1508692788000" expanded="true" signature="673:684" ph=" { " />
+            <marker date="1508692788000" expanded="true" signature="703:709" ph=" }" />
+            <marker date="1508692788000" expanded="true" signature="749:951" ph="{...}" />
+            <marker date="1508692788000" expanded="true" signature="989:2787" ph="{...}" />
+            <marker date="1508692788000" expanded="true" signature="2823:3246" ph="{...}" />
+            <marker date="1508692788000" expanded="true" signature="3310:3389" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/updateBOMbyBatch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="6" column="47" lean-forward="false" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
-          <folding />
+        <state relative-caret-position="336">
+          <caret line="19" column="58" lean-forward="false" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/checkExcelFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4">
+          <caret line="95" column="49" lean-forward="false" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Desktop/東碩/UMEC_BOM/src/MainAlter/MainAlter_1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="173" column="22" lean-forward="false" selection-start-line="173" selection-start-column="22" selection-end-line="173" selection-end-column="22" />
+        <state relative-caret-position="327">
+          <caret line="46" column="31" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="46" selection-end-column="31" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#CreateECO#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#addAffectedItem#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithData#0;class#MainAlter_1#0" expanded="false" />
@@ -674,43 +1141,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TEST_RedLineTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="749">
-          <caret line="39" column="38" lean-forward="false" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="38" />
+        <state relative-caret-position="264">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_80/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="858" column="0" lean-forward="false" selection-start-line="858" selection-start-column="0" selection-end-line="858" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TEST.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="389">
+          <caret line="38" column="50" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#188#196#0" expanded="true" />
+            <element signature="method#getNewRev#0;class#TEST#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/updateBOMbyBatch_button.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="211" column="67" lean-forward="false" selection-start-line="211" selection-start-column="67" selection-end-line="211" selection-end-column="67" />
+        <state relative-caret-position="640">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#AddToChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#getNewRev#0;class#updateBOMbyBatch_button#0" expanded="false" />
           </folding>
         </state>
       </provider>

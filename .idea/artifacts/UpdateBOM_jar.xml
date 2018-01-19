@@ -9,6 +9,7 @@
       <element id="extracted-dir" path="D:/pp/anselm/poi-3.17.jar" path-in-jar="/" />
       <element id="extracted-dir" path="D:/pp/anselm/poi-ooxml-schemas-3.17.jar" path-in-jar="/" />
       <element id="directory" name="META-INF" />
+      <element id="extracted-dir" path="D:/pp/anselm/9.3.6_SDK_Samples/extensions/AnselmToolKit.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
