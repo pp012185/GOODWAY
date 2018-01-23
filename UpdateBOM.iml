@@ -7,11 +7,38 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="AgileAPI" level="application" />
+    <orderEntry type="library" name="AgileAPI" level="application" />
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://D:/pp/anselm/9.3.6_SDK_Samples/extensions/AnselmToolKit.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/東碩/AgileAPI.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/東碩/axis.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/東碩/pxapi.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

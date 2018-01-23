@@ -3,13 +3,20 @@
     <output-path>$PROJECT_DIR$/out/artifacts/UpdateBOM_jar</output-path>
     <root id="archive" name="UpdateBOM.jar">
       <element id="module-output" name="UpdateBOM" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/東碩/axis.jar" path-in-jar="/" />
       <element id="extracted-dir" path="D:/pp/anselm/9.3.4/AgileAPI.jar" path-in-jar="/" />
       <element id="extracted-dir" path="D:/pp/anselm/9.3.4/pxapi.jar" path-in-jar="/" />
       <element id="extracted-dir" path="D:/pp/anselm/poi-ooxml-3.17.jar" path-in-jar="/" />
       <element id="extracted-dir" path="D:/pp/anselm/poi-3.17.jar" path-in-jar="/" />
       <element id="extracted-dir" path="D:/pp/anselm/poi-ooxml-schemas-3.17.jar" path-in-jar="/" />
-      <element id="directory" name="META-INF" />
       <element id="extracted-dir" path="D:/pp/anselm/9.3.6_SDK_Samples/extensions/AnselmToolKit.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/東碩/pxapi.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/東碩/AgileAPI.jar" path-in-jar="/" />
+      <element id="file-copy" path="$USER_HOME$/Desktop/東碩/AgileAPI.jar" />
+      <element id="file-copy" path="D:/pp/anselm/9.3.6_SDK_Samples/extensions/AnselmToolKit.jar" />
+      <element id="file-copy" path="$USER_HOME$/Desktop/東碩/axis.jar" />
+      <element id="file-copy" path="$USER_HOME$/Desktop/東碩/pxapi.jar" />
+      <element id="directory" name="META-INF" />
     </root>
   </artifact>
 </component>
