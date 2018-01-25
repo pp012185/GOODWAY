@@ -9,23 +9,24 @@ import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 public class TEST {
 
-    static LogIt log= new LogIt();
-    private static String getNewRev(String oldRev){
+    static LogIt log = new LogIt();
+
+    private static String getNewRev(String oldRev) {
 
         String NewRev = "";
-        String a = oldRev.substring(0,1);
-        int b = Integer.parseInt(oldRev.substring(1,2));
-        String c = oldRev.substring(2,3);
-        int d = Integer.parseInt(oldRev.substring(3,4));
+        String a = oldRev.substring(0, 1);
+        int b = Integer.parseInt(oldRev.substring(1, 2));
+        String c = oldRev.substring(2, 3);
+        int d = Integer.parseInt(oldRev.substring(3, 4));
 
-        if (d==9){
-            b=b+1;
-            d=0;
-        }else {
-            d=d+1;
+        if (d == 9) {
+            b = b + 1;
+            d = 0;
+        } else {
+            d = d + 1;
         }
 
-        NewRev = a+b+c+d;
+        NewRev = a + b + c + d;
         return NewRev;
     }
 
@@ -53,6 +54,25 @@ public class TEST {
 
     public static void main(String[] args) {
         IAgileSession session = connect();
+        IChange change = null;
+        try {
+            change = (IChange) session.getObject(IChange.OBJECT_TYPE,"UPDATEBOM0002");
+
+
+                // update flag
+                // Get the Part Category cell
+                ICell cell = change.getCell(ChangeConstants.ATT_PAGE_THREE_LIST02);
+                // Get available list values for Part Category
+                IAgileList values = cell.getAvailableValues();
+                // Set the value to Electrical
+                values.setSelection(new Object[] { "Yes" });
+                cell.setValue(values);
+
+
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
+
 
         /*
         IAgileSession session = connect();
@@ -159,6 +179,5 @@ public class TEST {
 
 
     }
-
-
 }
+

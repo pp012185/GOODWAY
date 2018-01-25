@@ -20,17 +20,29 @@ public class checkExcelFile1 implements IEventAction,ICustomAction{
 
 
         System.out.println("------Start------");
-        String filepath = localpath+"\\"+fileName;
+
         try {
             IObjectEventInfo info = (IObjectEventInfo)req;
             IDataObject obj = info.getDataObject();
             IChange change = (IChange)obj;
-
+            String filepath = localpath+"\\"+change.getName().toString()+"_"+fileName;
 
             System.out.println("Download");
             downloadExcelFile(session,change,localpath,fileName);
+
             boolean A =  readExcel(filepath,session);
+
+            // Get the Part Category cell
+            ICell cell = change.getCell(ChangeConstants.ATT_PAGE_THREE_LIST01);
+            // Get available list values for Part Category
+            IAgileList values = cell.getAvailableValues();
+            // Set the value to Electrical
+            values.setSelection(new Object[] { "Yes" });
+            cell.setValue(values);
+
             System.out.println("Result: "+ A);
+
+
 
             return new EventActionResult(req,new ActionResult(ActionResult.STRING,"Success: "));
         } catch (Exception e) {
@@ -46,9 +58,9 @@ public class checkExcelFile1 implements IEventAction,ICustomAction{
 
     }
 
-    private static boolean readExcel(String path,IAgileSession session) throws IOException, APIException {
+    private static boolean readExcel(String path,IAgileSession session) throws IOException, APIException ,Exception{
         boolean allinSystem=false;
-
+        System.out.println("read path: "+path);
         FileInputStream inp = new FileInputStream(path);
         XSSFWorkbook wb = new XSSFWorkbook(inp);                //讀取Excel
         XSSFSheet sheet = wb.getSheetAt(0);             //讀取wb內的頁面
@@ -56,22 +68,33 @@ public class checkExcelFile1 implements IEventAction,ICustomAction{
         int rowlength = sheet.getPhysicalNumberOfRows();       // number of row
         int columnlength = row.getPhysicalNumberOfCells();     // number of column
 
-        for (int i=1;i<rowlength;i++){
-            row = sheet.getRow(i);
-            for(int j =0;j<2;j++){
-                String excelCell = row.getCell(j)+"";
-                System.out.println("Part Num: "+ excelCell);
-                IItem item = (IItem) session.getObject(IItem.OBJECT_TYPE, excelCell);
-                System.out.println(item.getValue(ItemConstants.ATT_TITLE_BLOCK_NUMBER));
+        System.out.println("excel row: "+ rowlength);
+        System.out.println("config row: "+NumOfexcelrow);
+
+        if((rowlength-1)==NumOfexcelrow){
+            for (int i=1;i<(NumOfexcelrow+1);i++){
+                row = sheet.getRow(i);
+                for(int j =0;j<2;j++){
+                    String excelCell = row.getCell(j)+"";
+                    System.out.println("Part Num: "+ excelCell);
+                    IItem item = (IItem) session.getObject(IItem.OBJECT_TYPE, excelCell);
+                    System.out.println(item.getValue(ItemConstants.ATT_TITLE_BLOCK_NUMBER));
+                }
             }
+            inp.close();
+            allinSystem = true;
+        }else {
+            inp.close();
+            allinSystem = false;
+        throw new Exception("Excel Error");
         }
-        inp.close();
-        allinSystem = true;
+
         return allinSystem;
     }
 
     private void downloadExcelFile(IAgileSession session,IChange change,String path,String name) throws Exception {
         InputStream ins = null;
+        String changeName = change.getName().toString();
         try {
             // 找檔案的table
             ITable attach_tb = change.getTable(ChangeConstants.TABLE_ATTACHMENTS);
@@ -102,9 +125,11 @@ public class checkExcelFile1 implements IEventAction,ICustomAction{
          */
 
         String localFileFolderPath = path;
-        String fileName = name;
+        String fileName = changeName+"_"+name;
         File file = new File(localFileFolderPath);
         String filePath = file.getPath();
+        System.out.println("filePath:"+filePath);
+        System.out.println("fileName:"+fileName);
         System.out.println("\t Set File Path.");
         System.out.println("Set File Path.");
 
@@ -115,7 +140,7 @@ public class checkExcelFile1 implements IEventAction,ICustomAction{
 
         FileOutputStream fos = null;
         try {
-            fos = new FileOutputStream(filePath + "\\" + fileName);
+            fos = new FileOutputStream(filePath + "\\" +fileName);
             System.out.println("\t File Output Stream Ready.");
             System.out.println("File Output Stream Ready.");
             byte[] b = new byte[2048];
@@ -145,18 +170,34 @@ public class checkExcelFile1 implements IEventAction,ICustomAction{
     public ActionResult doAction(IAgileSession session, INode iNode, IDataObject obj) {
 
         System.out.println("------Start------");
-        String filepath = localpath+"\\"+fileName;
         try {
-
+            String result = "";
             IChange change = (IChange)obj;
 
+            String filepath = localpath+"\\"+change.getName().toString()+"_"+fileName;
 
             System.out.println("Download");
             downloadExcelFile(session,change,localpath,fileName);
+
             boolean A =  readExcel(filepath,session);
             System.out.println("Result: "+ A);
 
-            return new ActionResult(0,"Success: ");
+            if(A){
+                // Get the Part Category cell
+                ICell cell = change.getCell(ChangeConstants.ATT_PAGE_THREE_LIST01);
+                // Get available list values for Part Category
+                IAgileList values = cell.getAvailableValues();
+                // Set the value to Electrical
+                values.setSelection(new Object[] { "Yes" });
+                cell.setValue(values);
+                result ="Success";
+            }else {
+                result ="Excel error";
+            }
+
+
+
+            return new ActionResult(0,"Status: "+result);
         } catch (Exception e) {
             e.printStackTrace();
             return new ActionResult(ActionResult.EXCEPTION,new Exception("Excel error"));

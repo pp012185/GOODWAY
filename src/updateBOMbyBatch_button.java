@@ -24,11 +24,13 @@ public class updateBOMbyBatch_button implements ICustomAction{
 
 
 
-        String filepath = localpath+"\\"+fileName ;
-        int batchSize = NumOfBatch;
+
+
         try {
             System.out.println("------Start------");
             IChange change = (IChange) obj;
+            String filepath = localpath+"\\"+change.getName().toString()+"_"+fileName;
+            int batchSize = NumOfBatch;
 
             // build Where Used list
             ArrayList WhereUsedList = getWhereUsedList(filepath,session);
@@ -40,13 +42,15 @@ public class updateBOMbyBatch_button implements ICustomAction{
 
             System.out.println("WhereUsedList length: "+ WhereUsedList.size());
             int WhereUsedListlength = WhereUsedList.size();
-            int NumOfsubChange = (WhereUsedListlength/batchSize) +1;
+            int NumOfsubChange=0;
+            if(WhereUsedListlength%batchSize == 0)  NumOfsubChange = (WhereUsedListlength/batchSize);
+             else                                   NumOfsubChange = (WhereUsedListlength/batchSize) +1;
+
             System.out.println("NumOfsubChange: "+NumOfsubChange);
             int j =0;
 
-
+            // set
             for(int i=0;i<NumOfsubChange;i++){
-
                 // create sub change
                 IChange change2 = CreateSubChange(session);
 
@@ -59,6 +63,7 @@ public class updateBOMbyBatch_button implements ICustomAction{
                 reltionship_tb.createRow(change2);
             }
 
+            // update
             ITable reltionship_tb2 = obj.getTable(ChangeConstants.TABLE_RELATIONSHIPS);
             Iterator it = reltionship_tb2.iterator();
             while (it.hasNext()){
@@ -69,6 +74,8 @@ public class updateBOMbyBatch_button implements ICustomAction{
                     IChange change3 = (IChange) obj2;
                     //改affected item 的redline table
                     updateRedlineBOM(change3,session,map);
+                    //次表單進下一站
+                    //changeStatus(change3);
                 }
             }
 
@@ -126,7 +133,7 @@ public class updateBOMbyBatch_button implements ICustomAction{
                 System.out.println("Lifecycle phase: "+oldparentitem.getValue(ItemConstants.ATT_TITLE_BLOCK_LIFECYCLE_PHASE).toString());
                 String phase = oldparentitem.getValue(ItemConstants.ATT_TITLE_BLOCK_LIFECYCLE_PHASE).toString();
                 //System.out.println(phase.equals("EOL") || phase.equals("Pre EOL"));
-                if(!WhereUsed_list.contains(oldparentitem)  &&  !(phase.equals("EOL") || phase.equals("Pre EOL"))  ) WhereUsed_list.add(oldparentitem);
+                if(!WhereUsed_list.contains(oldparentitem)  &&  ( phase.equals("Mass Production") || phase.equals("Pilot Run") )  ) WhereUsed_list.add(oldparentitem);
             }
         }
         return WhereUsed_list;
@@ -163,7 +170,7 @@ public class updateBOMbyBatch_button implements ICustomAction{
     private static void AddToChange(IChange change, ArrayList WhereUsed_list,int num,int bsize,IAgileSession session) throws APIException {
 
         ITable affecteditem_tb = change.getTable(ChangeConstants.TABLE_AFFECTEDITEMS);
-        System.out.println("1");
+        //System.out.println("1");
         for(int i=0;i<bsize;i++){
             String item =  WhereUsed_list.get(num).toString();
             IItem aftitem = (IItem) session.getObject(IItem.OBJECT_TYPE, item);
@@ -203,7 +210,7 @@ public class updateBOMbyBatch_button implements ICustomAction{
             }
         }
         //Create a SubCO object
-        System.out.println("subNUM:"+atoNextNumber);
+        //System.out.println("subNUM:"+atoNextNumber);
 
         if (classSubCO != null) change = (IChange) session.createObject(classSubCO, atoNextNumber);
 
@@ -231,19 +238,23 @@ public class updateBOMbyBatch_button implements ICustomAction{
         ITable Affected_tb =  change.getTable(ChangeConstants.TABLE_AFFECTEDITEMS);
         Iterator it = Affected_tb.iterator();
         while (it.hasNext()){
+            System.out.println("改完版本");
             // get affected item
             IRow row = (IRow) it.next();
-            System.out.println("Site"+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_SITES));
+            //System.out.println("Site"+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_SITES));
             if(row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_SITES).toString().equals("")) continue;
             String tempsite =row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_SITES).toString();
 
-            System.out.println("affected item: "+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_ITEM_NUMBER).toString());
-            System.out.println("Old REV: "+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_OLD_REV).toString());
+            //System.out.println("affected item: "+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_ITEM_NUMBER).toString());
+            //System.out.println("Old REV: "+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_OLD_REV).toString());
             String NewRev = getNewRev(row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_OLD_REV).toString());
-            row.setValue(ChangeConstants.ATT_AFFECTED_ITEMS_NEW_REV,NewRev);
-            System.out.println("New REV: "+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_NEW_REV).toString());
+            if(NewRev.equals("")) ;
+                else row.setValue(ChangeConstants.ATT_AFFECTED_ITEMS_NEW_REV,NewRev);
+            //System.out.println("New REV: "+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_NEW_REV).toString());
             String AffectedItemNum = row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_ITEM_NUMBER).toString();
             IItem AffectedItem =(IItem) session.getObject(IItem.OBJECT_TYPE,AffectedItemNum);
+            System.out.println("改完版本");
+            System.out.println("掃完一次BOM");
             // get redline BOM
             AffectedItem.setRevision(change.getName());
             AffectedItem.setManufacturingSite(tempsite);
@@ -257,6 +268,8 @@ public class updateBOMbyBatch_button implements ICustomAction{
                 if(map.get(oldNum)==null) continue;
                 temp_list.add(row2);
             }
+            System.out.println("掃完一次BOM");
+            System.out.println("新增BOM並改欄位");
             // System.out.println(temp_list);
             HashMap<String,String[]> tempmap = new HashMap<>();
             Iterator it3 = temp_list.iterator();
@@ -270,24 +283,32 @@ public class updateBOMbyBatch_button implements ICustomAction{
                 IItem newitem = (IItem) session.getObject(IItem.OBJECT_TYPE,map.get(oldNum));
                 // add new row, set value
                 IRow RedlineRow = RedlineBOM_tb.createRow(newitem);
+                HashMap map2 = new HashMap();
+
                 //RedlineRow.setValue(1012,row3.getValue(1012));      // 序號
                 array[0]=row3.getValue(1012).toString();
-                RedlineRow.setValue(1637,row3.getValue(1637));      // 製造單位
-                RedlineRow.setValue(12508,row3.getValue(12508));    // 底數
-                RedlineRow.setValue(1035,row3.getValue(1035));      // 組成用量
-                RedlineRow.setValue(2177,row3.getValue(2177));      // 計算值
+                map2.put(1637,row3.getValue(1637));      // 製造單位
+                map2.put(12508,row3.getValue(12508));    // 底數
+                map2.put(1035,row3.getValue(1035));      // 組成用量
+                map2.put(2177,row3.getValue(2177));      // 計算值
                 //RedlineRow.setValue(1019,row3.getValue(1019));      // 插件位置
                 if(!row3.getValue(1019).toString().isEmpty())array[1]=row3.getValue(1019).toString();
-                RedlineRow.setValue(2175,row3.getValue(2175));      // 優先順序
-                RedlineRow.setValue(2176,row3.getValue(2176));      // 代替群組
-                RedlineRow.setValue(1638,row3.getValue(1638));      // 標準成本計算
+                map2.put(2175,row3.getValue(2175));      // 優先順序
+                map2.put(2176,row3.getValue(2176));      // 代替群組
+                map2.put(1638,row3.getValue(1638));      // 標準成本計算
                 tempmap.put(newitem.getName(),array);
                 //RedlineRow.setValue(12508,row3.getValue(12508));
                 //RedlineRow.setValue(12509,row3.getValue(12509));
+                RedlineRow.setValues(map2);
             }
+            System.out.println("新增BOM並改欄位");
+
+            System.out.println("刪除BOM");
             // remove old row
             RedlineBOM_tb.removeAll(temp_list);
+            System.out.println("刪除BOM");
 
+            System.out.println("加序號和插件位置");
             ITable RedlineBOM_tb2 = AffectedItem.getTable(ItemConstants.TABLE_REDLINEBOM);
             Iterator it4 = RedlineBOM_tb2.iterator();
             while (it4.hasNext()){
@@ -299,30 +320,51 @@ public class updateBOMbyBatch_button implements ICustomAction{
                     row4.setValue(1019,a[1]);
                 }
             }
-
-
-
+            System.out.println("加序號和插件位置");
 
             }
+        System.out.println("Complete BOM替換單: "+ change.getName().toString());
         }
     private static String getNewRev(String oldRev){
 
         String NewRev = "";
-        String a = oldRev.substring(0,1);
-        int b = Integer.parseInt(oldRev.substring(1,2));
-        String c = oldRev.substring(2,3);
-        int d = Integer.parseInt(oldRev.substring(3,4));
-
-        if (d==9){
-            b=b+1;
-            d=0;
+        if (oldRev.equals("")){
+            NewRev = "";
         }else {
-            d=d+1;
+            String a = oldRev.substring(0,1);
+            int b = Integer.parseInt(oldRev.substring(1,2));
+            String c = oldRev.substring(2,3);
+            int d = Integer.parseInt(oldRev.substring(3,4));
+
+            if (d==9){
+                b=b+1;
+                d=0;
+            }else {
+                d=d+1;
+            }
+            NewRev = a+b+c+d;
         }
 
-        NewRev = a+b+c+d;
         return NewRev;
     }
+
+    /***************************************************************************************
+       * 次表單進入下一個站別
+       * *************************************************************************************/
+    private static void changeStatus(IChange change) throws APIException {
+        // Get the next status of the change
+        IStatus nextStatus = change.getDefaultNextStatus();
+        // Get default approvers for the next status
+        ISignoffReviewer[] defaultApprovers =change.getReviewers(nextStatus, WorkflowConstants.USER_APPROVER);
+        List<ISignoffReviewer> approverList =Arrays.asList(defaultApprovers);
+        // Get default observers for the next status
+        ISignoffReviewer[] defaultObservers =change.getReviewers(nextStatus, WorkflowConstants.USER_OBSERVER);
+        List<ISignoffReviewer> observerList =Arrays.asList(defaultObservers);
+        // Change to the next status
+        change.changeStatus(nextStatus, false, "", false, false, null, approverList,observerList, null, false);
+    }
+
+
 
     }
 
