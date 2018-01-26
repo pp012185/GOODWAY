@@ -10,14 +10,15 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class checkExcelFile1 implements IEventAction,ICustomAction{
-    static final Ini ini = new Ini("C:\\Agile\\Config.ini");
-    static final int NumOfexcelrow = Integer.valueOf(ini.getValue("parameter","NumOfexcelrow")) ;
-    static final int NumOfBatch = Integer.valueOf(ini.getValue("parameter","NumOfBatch"));
-    static final String localpath = ini.getValue("path","localpath");
-    static final String fileName = ini.getValue("Name","fileName");
+
     @Override
     public EventActionResult doAction(IAgileSession session, INode Node, IEventInfo req) {
 
+        Ini ini = new Ini("C:\\Agile\\Config.ini");
+        int NumOfexcelrow = Integer.valueOf(ini.getValue("parameter","NumOfexcelrow")) ;
+        int NumOfBatch = Integer.valueOf(ini.getValue("parameter","NumOfBatch"));
+        String localpath = ini.getValue("path","localpath");
+        String fileName = ini.getValue("Name","fileName");
 
         System.out.println("------Start------");
 
@@ -30,7 +31,7 @@ public class checkExcelFile1 implements IEventAction,ICustomAction{
             System.out.println("Download");
             downloadExcelFile(session,change,localpath,fileName);
 
-            boolean A =  readExcel(filepath,session);
+            boolean A =  readExcel(filepath,session,NumOfexcelrow);
 
             // Get the Part Category cell
             ICell cell = change.getCell(ChangeConstants.ATT_PAGE_THREE_LIST01);
@@ -58,7 +59,7 @@ public class checkExcelFile1 implements IEventAction,ICustomAction{
 
     }
 
-    private static boolean readExcel(String path,IAgileSession session) throws IOException, APIException ,Exception{
+    private static boolean readExcel(String path,IAgileSession session,int NumOfexcelrow) throws IOException, APIException ,Exception{
         boolean allinSystem=false;
         System.out.println("read path: "+path);
         FileInputStream inp = new FileInputStream(path);
@@ -169,6 +170,12 @@ public class checkExcelFile1 implements IEventAction,ICustomAction{
     @Override
     public ActionResult doAction(IAgileSession session, INode iNode, IDataObject obj) {
 
+          Ini ini = new Ini("C:\\Agile\\Config.ini");
+          int NumOfexcelrow = Integer.valueOf(ini.getValue("parameter","NumOfexcelrow")) ;
+          int NumOfBatch = Integer.valueOf(ini.getValue("parameter","NumOfBatch"));
+          String localpath = ini.getValue("path","localpath");
+          String fileName = ini.getValue("Name","fileName");
+
         System.out.println("------Start------");
         try {
             String result = "";
@@ -179,7 +186,7 @@ public class checkExcelFile1 implements IEventAction,ICustomAction{
             System.out.println("Download");
             downloadExcelFile(session,change,localpath,fileName);
 
-            boolean A =  readExcel(filepath,session);
+            boolean A =  readExcel(filepath,session,NumOfexcelrow);
             System.out.println("Result: "+ A);
 
             if(A){

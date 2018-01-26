@@ -55,23 +55,13 @@ public class TEST {
     public static void main(String[] args) {
         IAgileSession session = connect();
         IChange change = null;
-        try {
-            change = (IChange) session.getObject(IChange.OBJECT_TYPE,"UPDATEBOM0002");
 
+          Ini ini = new Ini("C:\\Agile\\Config.ini");
+          int NumOfexcelrow = Integer.valueOf(ini.getValue("parameter","NumOfexcelrow")) ;
+          String localpath = ini.getValue("path","localpath");
+          String fileName = ini.getValue("Name","fileName");
 
-                // update flag
-                // Get the Part Category cell
-                ICell cell = change.getCell(ChangeConstants.ATT_PAGE_THREE_LIST02);
-                // Get available list values for Part Category
-                IAgileList values = cell.getAvailableValues();
-                // Set the value to Electrical
-                values.setSelection(new Object[] { "Yes" });
-                cell.setValue(values);
-
-
-        } catch (APIException e) {
-            e.printStackTrace();
-        }
+        System.out.println("config row: "+ NumOfexcelrow);
 
 
         /*
