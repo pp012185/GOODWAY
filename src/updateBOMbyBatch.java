@@ -2,6 +2,7 @@ import com.agile.api.*;
 import com.agile.px.ActionResult;
 import com.agile.px.ICustomAction;
 import com.anselm.plm.utilobj.Ini;
+import com.anselm.plm.utilobj.LogIt;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -10,9 +11,15 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Array;
+import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 public class updateBOMbyBatch implements ICustomAction{
+
+    private static String      pxheading = "updateBOMbyBatch"; //程式名稱
+    public static LogIt log = new LogIt(pxheading);
 
     Ini ini = new Ini("C:\\Agile\\Config.ini");
     int NumOfexcelrow = Integer.valueOf(ini.getValue("parameter","NumOfexcelrow")) ;
@@ -22,11 +29,24 @@ public class updateBOMbyBatch implements ICustomAction{
     @Override
     public ActionResult doAction(IAgileSession session, INode Node, IDataObject obj) {
 
+
         try {
             System.out.println("------Start------");
+
+            SimpleDateFormat dateformatForLogFileName = new SimpleDateFormat("yyyy_MM", java.util.Locale.TAIWAN);
+            dateformatForLogFileName.setTimeZone(TimeZone.getTimeZone("Asia/Taipei"));
+            Calendar jc = Calendar.getInstance();
+            jc.setTimeZone(TimeZone.getTimeZone("Asia/Taipei"));
+
+            log.setLogFileWithDateInFileName("C:\\Agile", pxheading, true);
+            log.log(log.getCurrentTimeString());
+
+
             IChange change = (IChange) obj;
             String filepath = localpath+"\\"+change.getName().toString()+"_"+fileName;
             int batchSize = NumOfBatch;
+
+
 
             // build Where Used list
             ArrayList WhereUsedList = getWhereUsedList(filepath,session);
@@ -68,9 +88,11 @@ public class updateBOMbyBatch implements ICustomAction{
                 if (obj2.getAgileClass().getSuperClass().getAPIName().toLowerCase().equals("changeordersclass")) {
                     IChange change3 = (IChange) obj2;
                     //改affected item 的redline table
-                    updateRedlineBOM(change3,session,map);
+                    String ms = updateRedlineBOM(change3,session,map);
                     //次表單進下一站
                     changeStatus(change3);
+                    System.out.println("顯示History");
+                    change3.logAction(ms);
                 }
             }
             // update flag
@@ -98,7 +120,7 @@ public class updateBOMbyBatch implements ICustomAction{
                 cell.setValue(values);
             }
 
-
+            log.close();
             System.out.println("--------End--------");
         } catch (IOException e) {
             e.printStackTrace();
@@ -107,7 +129,7 @@ public class updateBOMbyBatch implements ICustomAction{
         }
 
 
-        return new ActionResult(0,"update BOM button success!");
+        return new ActionResult(0,"update  button success!");
     }
 
 
@@ -251,25 +273,20 @@ public class updateBOMbyBatch implements ICustomAction{
     /***************************************************************************************
      * 改Redline BOM table，加入新料號item，將舊料號的欄位填入新料號的欄位，刪除舊料號 item  => 之後要改成客戶的欄位
      * *************************************************************************************/
-    private static void updateRedlineBOM(IChange change, IAgileSession session, HashMap map) throws APIException {
+    private static String updateRedlineBOM(IChange change, IAgileSession session, HashMap map) throws APIException {
 
         // get affected table
+        String message = "";
         ITable Affected_tb =  change.getTable(ChangeConstants.TABLE_AFFECTEDITEMS);
         Iterator it = Affected_tb.iterator();
         while (it.hasNext()){
-            //System.out.println("改版本");
+
             // get affected item
             IRow row = (IRow) it.next();
             //System.out.println("Site"+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_SITES));
             if(row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_SITES).toString().equals("")) continue;
             String tempsite =row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_SITES).toString();
 
-            //System.out.println("affected item: "+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_ITEM_NUMBER).toString());
-            //System.out.println("Old REV: "+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_OLD_REV).toString());
-            String NewRev = getNewRev(row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_OLD_REV).toString());
-            if(NewRev.equals("")) ;
-                else row.setValue(ChangeConstants.ATT_AFFECTED_ITEMS_NEW_REV,NewRev);
-            //System.out.println("New REV: "+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_NEW_REV).toString());
             String AffectedItemNum = row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_ITEM_NUMBER).toString();
             IItem AffectedItem =(IItem) session.getObject(IItem.OBJECT_TYPE,AffectedItemNum);
             //System.out.println("掃完一次BOM");
@@ -327,16 +344,44 @@ public class updateBOMbyBatch implements ICustomAction{
             Iterator it4 = RedlineBOM_tb2.iterator();
             while (it4.hasNext()){
                 IRow row4 = (IRow) it4.next();
+                //System.out.println("BOM num: "+row4.getValue(1011).toString());
                 String[] a = tempmap.get(row4.getValue(1011));
                 if(a != null)
                 {
-                    row4.setValue(1012,a[0]);      // 序號
-                    row4.setValue(1019,a[1]);
+                    try {
+                        row4.setValue(1012,a[0]);      // 序號
+                        row4.setValue(1019,a[1]);      // 插件位置
+                        //log.log("子表單名稱: "+change.getName()+"\r\n");
+                        //log.log("Affected items: "+AffectedItemNum+"\r\n");
+                        //log.log("Site of Affected items: "+tempsite+"\r\n");
+                        //log.log("新料號: "+row4.getValue(1011)+"\r\n");
+                    }catch (Exception exception){
+                        System.out.println("序號、插件位置重複： ");
+                        System.out.println("getMessage: "+exception.getMessage());
+                        message += "▲"+exception.getMessage()+"  ";
+
+                        log.log("子表單名稱: "+change.getName()+"\r\n");
+                        log.log("序號、插件位置重複："+exception.getMessage()+"\r\n");
+                        log.log("Affected items: "+AffectedItemNum+"\r\n");
+                        log.log("Site : "+tempsite+"\r\n");
+                        log.log("新料號: "+row4.getValue(1011)+"\r\n");
+
+                        continue;
+                    }
                 }
+                //System.out.println("BOM end");
             }
 
+            //System.out.println("改版本");
+            //System.out.println("affected item: "+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_ITEM_NUMBER).toString());
+            //System.out.println("Old REV: "+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_OLD_REV).toString());
+            String NewRev = getNewRev(row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_OLD_REV).toString());
+            if(NewRev.equals("")) ;
+            else row.setValue(ChangeConstants.ATT_AFFECTED_ITEMS_NEW_REV,NewRev);
+            //System.out.println("New REV: "+row.getValue(ChangeConstants.ATT_AFFECTED_ITEMS_NEW_REV).toString());
         }
         System.out.println("Complete BOM替換單: "+ change.getName().toString());
+        return message;
     }
     private static String getNewRev(String oldRev){
 

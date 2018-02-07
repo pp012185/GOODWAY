@@ -8,8 +8,15 @@
   <component name="ChangeListManager">
     <list default="true" id="e6d9a597-7596-4301-92eb-2d5612a5b8a2" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/UpdateBOM_jar/UpdateBOM.jar" afterPath="$PROJECT_DIR$/out/artifacts/UpdateBOM_jar/UpdateBOM.jar" />
+      <change beforePath="$PROJECT_DIR$/out/production/UpdateBOM/TEST.class" afterPath="$PROJECT_DIR$/out/production/UpdateBOM/TEST.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/UpdateBOM/checkExcelFile1.class" afterPath="$PROJECT_DIR$/out/production/UpdateBOM/checkExcelFile1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/UpdateBOM/updateBOMbyBatch.class" afterPath="$PROJECT_DIR$/out/production/UpdateBOM/updateBOMbyBatch.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/UpdateBOM/updateBOMbyBatch_button.class" afterPath="$PROJECT_DIR$/out/production/UpdateBOM/updateBOMbyBatch_button.class" />
       <change beforePath="$PROJECT_DIR$/src/TEST.java" afterPath="$PROJECT_DIR$/src/TEST.java" />
       <change beforePath="$PROJECT_DIR$/src/checkExcelFile1.java" afterPath="$PROJECT_DIR$/src/checkExcelFile1.java" />
+      <change beforePath="$PROJECT_DIR$/src/updateBOMbyBatch.java" afterPath="$PROJECT_DIR$/src/updateBOMbyBatch.java" />
+      <change beforePath="$PROJECT_DIR$/src/updateBOMbyBatch_button.java" afterPath="$PROJECT_DIR$/src/updateBOMbyBatch_button.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,30 +28,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="checkExcelFile1.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="checkExcelFile1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/checkExcelFile1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="195" column="62" lean-forward="true" selection-start-line="195" selection-start-column="62" selection-end-line="195" selection-end-column="62" />
+            <state relative-caret-position="312">
+              <caret line="172" column="53" lean-forward="false" selection-start-line="172" selection-start-column="53" selection-end-line="172" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#doAction#0;class#checkExcelFile1#0" expanded="false" />
+                <element signature="method#downloadExcelFile#0;class#checkExcelFile1#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="updateBOMbyBatch.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="updateBOMbyBatch.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/updateBOMbyBatch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="240" column="50" lean-forward="false" selection-start-line="240" selection-start-column="50" selection-end-line="240" selection-end-column="50" />
+            <state relative-caret-position="408">
+              <caret line="122" column="24" lean-forward="false" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getWhereUsedList#0;class#updateBOMbyBatch#0" expanded="false" />
                 <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch#0" expanded="false" />
                 <element signature="method#getMapping#0;class#updateBOMbyBatch#0" expanded="false" />
                 <element signature="method#AddToChange#0;class#updateBOMbyBatch#0" expanded="false" />
-                <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch#0" expanded="false" />
+                <element signature="method#CreateSubChange#0;class#updateBOMbyBatch#0" expanded="false" />
                 <element signature="method#getNewRev#0;class#updateBOMbyBatch#0" expanded="false" />
                 <element signature="method#changeStatus#0;class#updateBOMbyBatch#0" expanded="false" />
               </folding>
@@ -55,15 +64,11 @@
       <file leaf-file-name="updateBOMbyBatch_button.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/updateBOMbyBatch_button.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="773">
-              <caret line="234" column="113" lean-forward="false" selection-start-line="234" selection-start-column="113" selection-end-line="234" selection-end-column="113" />
+            <state relative-caret-position="1344">
+              <caret line="68" column="67" lean-forward="false" selection-start-line="68" selection-start-column="67" selection-end-line="68" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#getWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
-                <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
                 <element signature="method#getMapping#0;class#updateBOMbyBatch_button#0" expanded="false" />
-                <element signature="method#AddToChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
-                <element signature="method#CreateSubChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
                 <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch_button#0" expanded="false" />
                 <element signature="method#getNewRev#0;class#updateBOMbyBatch_button#0" expanded="false" />
                 <element signature="method#changeStatus#0;class#updateBOMbyBatch_button#0" expanded="false" />
@@ -87,8 +92,8 @@
       <file leaf-file-name="TEST.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TEST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-206">
-              <caret line="40" column="74" lean-forward="false" selection-start-line="40" selection-start-column="70" selection-end-line="40" selection-end-column="74" />
+            <state relative-caret-position="744">
+              <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getNewRev#0;class#TEST#0" expanded="false" />
@@ -100,16 +105,18 @@
       <file leaf-file-name="MainAlter_1.java" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Desktop/東碩/UMEC_BOM/src/MainAlter/MainAlter_1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1776">
-              <caret line="190" column="37" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
+            <state relative-caret-position="-254">
+              <caret line="667" column="24" lean-forward="false" selection-start-line="667" selection-start-column="20" selection-end-line="667" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#main#0;class#MainAlter_1#0" expanded="false" />
                 <element signature="method#CreateECO#0;class#MainAlter_1#0" expanded="false" />
+                <element signature="method#addAffectedItem#0;class#MainAlter_1#0" expanded="false" />
+                <element signature="method#DealWithData#0;class#MainAlter_1#0" expanded="false" />
+                <element signature="method#DealWithCommonBOM#0;class#MainAlter_1#0" expanded="false" />
                 <element signature="method#DealWithSiteBOM#0;class#MainAlter_1#0" expanded="false" />
                 <element signature="method#ChangeParts#0;class#MainAlter_1#0" expanded="false" />
                 <element signature="method#DealWithUnpassedAftitem#0;class#MainAlter_1#0" expanded="false" />
-                <element signature="method#DealWithErrorLinkedList#0;class#MainAlter_1#0" expanded="false" />
                 <element signature="method#updateSucessComponent#0;class#MainAlter_1#0" expanded="false" />
                 <element signature="method#ReleaseChange#0;class#MainAlter_1#0" expanded="false" />
                 <element signature="method#getDateTime#0;class#MainAlter_1#0" expanded="false" />
@@ -142,7 +149,6 @@
       <find>ini</find>
       <find>session</find>
       <find>set</find>
-      <find>close</find>
       <find>Rev</find>
       <find>add</find>
       <find>AFFECT</find>
@@ -154,6 +160,10 @@
       <find>Com</find>
       <find>BOM</find>
       <find>NumOfexcelrow</find>
+      <find>cl</find>
+      <find>exception</find>
+      <find>LOG</find>
+      <find>close</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,18 +180,18 @@
         <option value="$PROJECT_DIR$/src/TEST_RedLineTable.java" />
         <option value="$PROJECT_DIR$/src/checkExcelFile.java" />
         <option value="$PROJECT_DIR$/src/META-INF/services/com.agile.px.IEventAction" />
+        <option value="$PROJECT_DIR$/src/checkExcelFile1.java" />
+        <option value="$PROJECT_DIR$/src/TEST.java" />
         <option value="$PROJECT_DIR$/src/updateBOMbyBatch_button.java" />
         <option value="$PROJECT_DIR$/src/updateBOMbyBatch.java" />
-        <option value="$PROJECT_DIR$/src/TEST.java" />
-        <option value="$PROJECT_DIR$/src/checkExcelFile1.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="615" />
-    <option name="y" value="29" />
-    <option name="width" value="1314" />
-    <option name="height" value="901" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -199,6 +209,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -221,17 +233,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../practice3_event" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
@@ -369,6 +379,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -383,7 +394,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20118026" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.091201715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -403,7 +414,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -418,7 +429,7 @@
             <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#AddToChange#0;class#updateBOMbyBatch#0" expanded="false" />
-            <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch#0" expanded="false" />
+            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#getNewRev#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#changeStatus#0;class#updateBOMbyBatch#0" expanded="false" />
           </folding>
@@ -454,10 +465,12 @@
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#CreateECO#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#addAffectedItem#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithData#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithCommonBOM#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithSiteBOM#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#ChangeParts#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithUnpassedAftitem#0;class#MainAlter_1#0" expanded="false" />
-            <element signature="method#DealWithErrorLinkedList#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#updateSucessComponent#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#ReleaseChange#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#getDateTime#0;class#MainAlter_1#0" expanded="false" />
@@ -473,11 +486,7 @@
           <caret line="184" column="26" lean-forward="true" selection-start-line="184" selection-start-column="26" selection-end-line="184" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#AddToChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getNewRev#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#changeStatus#0;class#updateBOMbyBatch_button#0" expanded="false" />
@@ -491,6 +500,8 @@
           <caret line="95" column="49" lean-forward="false" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#doAction#0;class#checkExcelFile1#0" expanded="false" />
+            <element signature="method#downloadExcelFile#0;class#checkExcelFile1#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -505,7 +516,7 @@
             <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#AddToChange#0;class#updateBOMbyBatch#0" expanded="false" />
-            <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch#0" expanded="false" />
+            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#getNewRev#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#changeStatus#0;class#updateBOMbyBatch#0" expanded="false" />
           </folding>
@@ -518,11 +529,7 @@
           <caret line="278" column="5" lean-forward="true" selection-start-line="278" selection-start-column="5" selection-end-line="278" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#AddToChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getNewRev#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#changeStatus#0;class#updateBOMbyBatch_button#0" expanded="false" />
@@ -559,10 +566,12 @@
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#CreateECO#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#addAffectedItem#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithData#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithCommonBOM#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithSiteBOM#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#ChangeParts#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithUnpassedAftitem#0;class#MainAlter_1#0" expanded="false" />
-            <element signature="method#DealWithErrorLinkedList#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#updateSucessComponent#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#ReleaseChange#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#getDateTime#0;class#MainAlter_1#0" expanded="false" />
@@ -578,6 +587,8 @@
           <caret line="56" column="83" lean-forward="false" selection-start-line="56" selection-start-column="74" selection-end-line="56" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#doAction#0;class#checkExcelFile1#0" expanded="false" />
+            <element signature="method#downloadExcelFile#0;class#checkExcelFile1#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -592,7 +603,7 @@
             <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#AddToChange#0;class#updateBOMbyBatch#0" expanded="false" />
-            <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch#0" expanded="false" />
+            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#getNewRev#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#changeStatus#0;class#updateBOMbyBatch#0" expanded="false" />
           </folding>
@@ -628,10 +639,12 @@
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#CreateECO#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#addAffectedItem#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithData#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithCommonBOM#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithSiteBOM#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#ChangeParts#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithUnpassedAftitem#0;class#MainAlter_1#0" expanded="false" />
-            <element signature="method#DealWithErrorLinkedList#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#updateSucessComponent#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#ReleaseChange#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#getDateTime#0;class#MainAlter_1#0" expanded="false" />
@@ -647,11 +660,7 @@
           <caret line="227" column="0" lean-forward="true" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#AddToChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getNewRev#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#changeStatus#0;class#updateBOMbyBatch_button#0" expanded="false" />
@@ -665,6 +674,8 @@
           <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#doAction#0;class#checkExcelFile1#0" expanded="false" />
+            <element signature="method#downloadExcelFile#0;class#checkExcelFile1#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -679,7 +690,7 @@
             <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#AddToChange#0;class#updateBOMbyBatch#0" expanded="false" />
-            <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch#0" expanded="false" />
+            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#getNewRev#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#changeStatus#0;class#updateBOMbyBatch#0" expanded="false" />
           </folding>
@@ -704,10 +715,12 @@
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#CreateECO#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#addAffectedItem#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithData#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithCommonBOM#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithSiteBOM#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#ChangeParts#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithUnpassedAftitem#0;class#MainAlter_1#0" expanded="false" />
-            <element signature="method#DealWithErrorLinkedList#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#updateSucessComponent#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#ReleaseChange#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#getDateTime#0;class#MainAlter_1#0" expanded="false" />
@@ -723,11 +736,7 @@
           <caret line="201" column="37" lean-forward="false" selection-start-line="201" selection-start-column="37" selection-end-line="201" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#AddToChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getNewRev#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#changeStatus#0;class#updateBOMbyBatch_button#0" expanded="false" />
@@ -741,6 +750,8 @@
           <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#doAction#0;class#checkExcelFile1#0" expanded="false" />
+            <element signature="method#downloadExcelFile#0;class#checkExcelFile1#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -755,7 +766,7 @@
             <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#AddToChange#0;class#updateBOMbyBatch#0" expanded="false" />
-            <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch#0" expanded="false" />
+            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#getNewRev#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#changeStatus#0;class#updateBOMbyBatch#0" expanded="false" />
           </folding>
@@ -770,10 +781,12 @@
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#CreateECO#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#addAffectedItem#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithData#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithCommonBOM#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithSiteBOM#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#ChangeParts#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithUnpassedAftitem#0;class#MainAlter_1#0" expanded="false" />
-            <element signature="method#DealWithErrorLinkedList#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#updateSucessComponent#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#ReleaseChange#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#getDateTime#0;class#MainAlter_1#0" expanded="false" />
@@ -789,11 +802,7 @@
           <caret line="101" column="10" lean-forward="true" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#AddToChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getNewRev#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#changeStatus#0;class#updateBOMbyBatch_button#0" expanded="false" />
@@ -807,6 +816,8 @@
           <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#doAction#0;class#checkExcelFile1#0" expanded="false" />
+            <element signature="method#downloadExcelFile#0;class#checkExcelFile1#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -821,7 +832,7 @@
             <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#AddToChange#0;class#updateBOMbyBatch#0" expanded="false" />
-            <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch#0" expanded="false" />
+            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#getNewRev#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#changeStatus#0;class#updateBOMbyBatch#0" expanded="false" />
           </folding>
@@ -836,10 +847,12 @@
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#CreateECO#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#addAffectedItem#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithData#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithCommonBOM#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithSiteBOM#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#ChangeParts#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithUnpassedAftitem#0;class#MainAlter_1#0" expanded="false" />
-            <element signature="method#DealWithErrorLinkedList#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#updateSucessComponent#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#ReleaseChange#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#getDateTime#0;class#MainAlter_1#0" expanded="false" />
@@ -855,11 +868,7 @@
           <caret line="76" column="44" lean-forward="true" selection-start-line="76" selection-start-column="44" selection-end-line="76" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#AddToChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getNewRev#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#changeStatus#0;class#updateBOMbyBatch_button#0" expanded="false" />
@@ -873,6 +882,8 @@
           <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#doAction#0;class#checkExcelFile1#0" expanded="false" />
+            <element signature="method#downloadExcelFile#0;class#checkExcelFile1#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -887,7 +898,7 @@
             <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#AddToChange#0;class#updateBOMbyBatch#0" expanded="false" />
-            <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch#0" expanded="false" />
+            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#getNewRev#0;class#updateBOMbyBatch#0" expanded="false" />
             <element signature="method#changeStatus#0;class#updateBOMbyBatch#0" expanded="false" />
           </folding>
@@ -902,10 +913,12 @@
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#CreateECO#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#addAffectedItem#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithData#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithCommonBOM#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithSiteBOM#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#ChangeParts#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#DealWithUnpassedAftitem#0;class#MainAlter_1#0" expanded="false" />
-            <element signature="method#DealWithErrorLinkedList#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#updateSucessComponent#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#ReleaseChange#0;class#MainAlter_1#0" expanded="false" />
             <element signature="method#getDateTime#0;class#MainAlter_1#0" expanded="false" />
@@ -921,11 +934,7 @@
           <caret line="110" column="35" lean-forward="true" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getMapping#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#AddToChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#getNewRev#0;class#updateBOMbyBatch_button#0" expanded="false" />
             <element signature="method#changeStatus#0;class#updateBOMbyBatch_button#0" expanded="false" />
@@ -939,6 +948,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#doAction#0;class#checkExcelFile1#0" expanded="false" />
+            <element signature="method#downloadExcelFile#0;class#checkExcelFile1#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -954,7 +965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="858" column="0" lean-forward="false" selection-start-line="858" selection-start-column="0" selection-end-line="858" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -965,32 +975,10 @@
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.119/AUtil.class" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.860/LogIt.class" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.634/Ini.class" />
-    <entry file="file://$USER_HOME$/Desktop/東碩/UMEC_BOM/src/MainAlter/MainAlter_1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1776">
-          <caret line="190" column="37" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#MainAlter_1#0" expanded="false" />
-            <element signature="method#CreateECO#0;class#MainAlter_1#0" expanded="false" />
-            <element signature="method#DealWithSiteBOM#0;class#MainAlter_1#0" expanded="false" />
-            <element signature="method#ChangeParts#0;class#MainAlter_1#0" expanded="false" />
-            <element signature="method#DealWithUnpassedAftitem#0;class#MainAlter_1#0" expanded="false" />
-            <element signature="method#DealWithErrorLinkedList#0;class#MainAlter_1#0" expanded="false" />
-            <element signature="method#updateSucessComponent#0;class#MainAlter_1#0" expanded="false" />
-            <element signature="method#ReleaseChange#0;class#MainAlter_1#0" expanded="false" />
-            <element signature="method#getDateTime#0;class#MainAlter_1#0" expanded="false" />
-            <element signature="method#addMessage#0;class#MainAlter_1#0" expanded="false" />
-            <element signature="class#ErrorMessage#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/services/com.agile.px.IEventAction">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1004,45 +992,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/updateBOMbyBatch_button.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="773">
-          <caret line="234" column="113" lean-forward="false" selection-start-line="234" selection-start-column="113" selection-end-line="234" selection-end-column="113" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#getMapping#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#AddToChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#getNewRev#0;class#updateBOMbyBatch_button#0" expanded="false" />
-            <element signature="method#changeStatus#0;class#updateBOMbyBatch_button#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/updateBOMbyBatch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="240" column="50" lean-forward="false" selection-start-line="240" selection-start-column="50" selection-end-line="240" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getWhereUsedList#0;class#updateBOMbyBatch#0" expanded="false" />
-            <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch#0" expanded="false" />
-            <element signature="method#getMapping#0;class#updateBOMbyBatch#0" expanded="false" />
-            <element signature="method#AddToChange#0;class#updateBOMbyBatch#0" expanded="false" />
-            <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch#0" expanded="false" />
-            <element signature="method#getNewRev#0;class#updateBOMbyBatch#0" expanded="false" />
-            <element signature="method#changeStatus#0;class#updateBOMbyBatch#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TEST.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-206">
-          <caret line="40" column="74" lean-forward="false" selection-start-line="40" selection-start-column="70" selection-end-line="40" selection-end-column="74" />
+        <state relative-caret-position="744">
+          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getNewRev#0;class#TEST#0" expanded="false" />
@@ -1050,12 +1003,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/checkExcelFile1.java">
+    <entry file="file://$PROJECT_DIR$/src/updateBOMbyBatch_button.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="195" column="62" lean-forward="true" selection-start-line="195" selection-start-column="62" selection-end-line="195" selection-end-column="62" />
+        <state relative-caret-position="1344">
+          <caret line="68" column="67" lean-forward="false" selection-start-line="68" selection-start-column="67" selection-end-line="68" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#getMapping#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#updateRedlineBOM#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#getNewRev#0;class#updateBOMbyBatch_button#0" expanded="false" />
+            <element signature="method#changeStatus#0;class#updateBOMbyBatch_button#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/東碩/UMEC_BOM/src/MainAlter/MainAlter_1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-254">
+          <caret line="667" column="24" lean-forward="false" selection-start-line="667" selection-start-column="20" selection-end-line="667" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#CreateECO#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#addAffectedItem#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithData#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithCommonBOM#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithSiteBOM#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#ChangeParts#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#DealWithUnpassedAftitem#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#updateSucessComponent#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#ReleaseChange#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#getDateTime#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="method#addMessage#0;class#MainAlter_1#0" expanded="false" />
+            <element signature="class#ErrorMessage#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/checkExcelFile1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="172" column="53" lean-forward="false" selection-start-line="172" selection-start-column="53" selection-end-line="172" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#doAction#0;class#checkExcelFile1#0" expanded="false" />
+            <element signature="method#downloadExcelFile#0;class#checkExcelFile1#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/updateBOMbyBatch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="122" column="24" lean-forward="false" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getWhereUsedList#0;class#updateBOMbyBatch#0" expanded="false" />
+            <element signature="method#buildWhereUsedList#0;class#updateBOMbyBatch#0" expanded="false" />
+            <element signature="method#getMapping#0;class#updateBOMbyBatch#0" expanded="false" />
+            <element signature="method#AddToChange#0;class#updateBOMbyBatch#0" expanded="false" />
+            <element signature="method#CreateSubChange#0;class#updateBOMbyBatch#0" expanded="false" />
+            <element signature="method#getNewRev#0;class#updateBOMbyBatch#0" expanded="false" />
+            <element signature="method#changeStatus#0;class#updateBOMbyBatch#0" expanded="false" />
           </folding>
         </state>
       </provider>

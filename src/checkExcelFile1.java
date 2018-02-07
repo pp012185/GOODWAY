@@ -48,7 +48,7 @@ public class checkExcelFile1 implements IEventAction,ICustomAction{
             return new EventActionResult(req,new ActionResult(ActionResult.STRING,"Success: "));
         } catch (Exception e) {
             e.printStackTrace();
-            return new EventActionResult(req,new ActionResult(ActionResult.EXCEPTION,new Exception("Excel error")));
+            return new EventActionResult(req,new ActionResult(ActionResult.EXCEPTION,new Exception("Excel error: 1. 請檢查attachment上傳之excel內的新舊料號是否在系統都存在。 2. 請檢查attachment上傳之excel新舊料號組數是否超過參數設定")));
         }
 //        catch (IOException e) {
 //            e.printStackTrace();
@@ -72,8 +72,8 @@ public class checkExcelFile1 implements IEventAction,ICustomAction{
         System.out.println("excel row: "+ rowlength);
         System.out.println("config row: "+NumOfexcelrow);
 
-        if((rowlength-1)==NumOfexcelrow){
-            for (int i=1;i<(NumOfexcelrow+1);i++){
+        if((rowlength-1)<=NumOfexcelrow){
+            for (int i=1;i<rowlength;i++){
                 row = sheet.getRow(i);
                 for(int j =0;j<2;j++){
                     String excelCell = row.getCell(j)+"";
@@ -87,7 +87,7 @@ public class checkExcelFile1 implements IEventAction,ICustomAction{
         }else {
             inp.close();
             allinSystem = false;
-        throw new Exception("Excel Error");
+        throw new Exception("Excel error: 1. 請檢查attachment上傳之excel內的新舊料號是否在系統都存在。 2. 請檢查attachment上傳之excel新舊料號組數是否超過參數設定");
         }
 
         return allinSystem;
@@ -199,7 +199,7 @@ public class checkExcelFile1 implements IEventAction,ICustomAction{
                 cell.setValue(values);
                 result ="Success";
             }else {
-                result ="Excel error";
+                result ="Excel error: 1. 請檢查attachment上傳之excel內的新舊料號是否在系統都存在。 2. 請檢查attachment上傳之excel新舊料號組數是否超過參數設定";
             }
 
 
@@ -207,7 +207,7 @@ public class checkExcelFile1 implements IEventAction,ICustomAction{
             return new ActionResult(0,"Status: "+result);
         } catch (Exception e) {
             e.printStackTrace();
-            return new ActionResult(ActionResult.EXCEPTION,new Exception("Excel error"));
+            return new ActionResult(ActionResult.EXCEPTION,new Exception("Excel error: 1. 請檢查attachment上傳之excel內的新舊料號是否在系統都存在。 2. 請檢查attachment上傳之excel新舊料號組數是否超過參數設定"));
         }
 //        catch (IOException e) {
 //            e.printStackTrace();
